@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-error {
+    color: red;
+}
+
+
+.raiser-button {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    width: 100px;
+    display: table-cell;
+  }
+
+  .loginForm {
+      padding: 50px;
+
+  }
