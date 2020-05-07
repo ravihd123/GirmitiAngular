@@ -19,8 +19,8 @@ export class AppComponent {
   showAfterLog() {
     return this.authGaurd.getLogginStatus();
   }
-  
-  logout(){
+
+  logout() {
     this.authGaurd.isLoggedOut()
   }
 }
