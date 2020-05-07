@@ -30,4 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Deployment
 
 Code wil auto-deploy to firebase when we commit changes to master.
-Firebase hosted URL: https://jasonserver-6ebc9.web.app/login  
+Firebase hosted URL: https://jasonserver-6ebc9.web.app/login
