@@ -1,1 +1,18 @@
+<div *ngIf = "showAfterLog()">
+    <div fxLayout="row">
+        <a href="http://www.girmiti.com/" class="logo pull-left" fxFlex='95'><img src="../assets/Girmiti.png"></a>
+        <button (click)="logout()"  fxLayout="row" fxLayoutAlign="center center">Logout</button>
+    </div>
+    
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <div  fxLayoutGap="10px">
+                <a mat-button [routerLink]="'/dashboard'"> Accounts </a>
+                <a mat-button [routerLink]="'/customers'"> Create Account </a>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+</div>
+
 <router-outlet></router-outlet>

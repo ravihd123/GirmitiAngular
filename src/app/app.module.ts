@@ -12,6 +12,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
+import { HttpClientModule } from '@angular/common/http';
+import { MatToolbarModule } from  '@angular/material/toolbar';
+import { MatIconModule} from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
+
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
@@ -26,7 +33,11 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

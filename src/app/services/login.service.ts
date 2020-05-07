@@ -8,7 +8,10 @@ export class LoginService {
   constructor() { }
 
   authenticateLogin(userdData) {
-    return false
-
+    if(userdData.username === 'ravi' && userdData.password == 'ravi123'){
+      return true
+    }else {
+      return false;
+    }
   }
 }

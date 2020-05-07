@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
+import { AuthGaurdService } from '../services/auth-guard.service';
 
 @Component({
   selector: 'app-login',
@@ -16,10 +17,12 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private loginservice: LoginService,
-    private route: Router
+    private route: Router,
+    private authGaurd: AuthGaurdService
   ) { }
 
   ngOnInit(): void {
+    this.authGaurd.isLoggedOut()
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -29,7 +32,8 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.validLogin = this.loginservice.authenticateLogin(this.loginForm.value)
     if (this.validLogin) {
-      this.route.navigateByUrl('service')
+      this.authGaurd.isLoggedIn();
+      this.route.navigateByUrl('dashboard')
     } else {
       // this.route.navigateByUrl('login')
 
@@ -37,7 +41,6 @@ export class LoginComponent implements OnInit {
 
   }
   ClearLogin() {
-
     this.loginForm.reset();
     this.validLogin = true
   }

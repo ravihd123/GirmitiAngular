@@ -1,31 +1,50 @@
-<div fxLayout="column" class="loginForm">
+<div fxLayoutAlign="center" class="wrapper">
 
-    <mat-error *ngIf="!validLogin">
-        username or password is incorrect
-    </mat-error>
-    <form [formGroup]="loginForm" fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center">
-        <mat-form-field fxLayoutGap="10px">
-            <mat-label>Username</mat-label>
-            <input matInput placeholder="username" formControlName="username" required>
-            <mat-error
-                *ngIf="loginForm.get('username').invalid && (loginForm.get('username').dirty || loginForm.get('username').touched)">
-                This is required field</mat-error>
-        </mat-form-field>
+    <div id="formContent" fxLayout="column" fxLayoutGap="20px">
+        <div fxLayout="column">
+            <a href="http://www.girmiti.com/" class="logo pull-left"><img src="../assets/Girmiti.png"></a>
+            <mat-error *ngIf="!validLogin">
+                username or password is incorrect
+            </mat-error>
 
-        <mat-form-field fxLayoutGap="10px">
-            <mat-label>Password</mat-label>
-            <input matInput placeholder="password" formControlName="password" required>
-            <mat-error
-                *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
-                This is required field</mat-error>
-        </mat-form-field>
-        <div fxLayout="row" fxLayoutGap="10px">
-            <button class='raiser-button' mat-raised-button color="primary" (click)='onSubmit()'
-                [disabled]='loginForm.invalid'> login</button>
-            <button class='raiser-button' mat-stroked-button color="accent" matTooltip="Clear" (click)='ClearLogin()'>
+        </div>
+        <form [formGroup]="loginForm" fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+            <mat-form-field fxLayoutGap="10px" fxLayout="column" fxLayoutAlign="center center">
+                <!-- <mat-label>Username</mat-label> -->
+                <input matInput placeholder="USERNAME" formControlName="username" required>
+                <div>
+                    <mat-error
+                        *ngIf="loginForm.get('username').invalid && (loginForm.get('username').dirty || loginForm.get('username').touched)">
+                        This is required field</mat-error>
+
+                </div>
+
+            </mat-form-field>
+
+            <mat-form-field fxLayoutGap="10px" fxLayout="column" fxLayoutAlign="center center">
+                <!-- <mat-label>Password</mat-label> -->
+                <input type="password" matInput placeholder="PASSWORD" formControlName="password" required>
+                <div>
+                    <mat-error
+                        *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                        This is required field</mat-error>
+
+                </div>
+
+            </mat-form-field>
+          
+
+        </form>
+
+        <div fxLayoutGap="10px" fxLayout="column">
+            <button mat-raised-button color="primary" (click)='onSubmit()' [disabled]='loginForm.invalid'>
+                login</button>
+            <button mat-stroked-button color="accent" matTooltip="Clear" (click)='ClearLogin()'>
                 Clear</button>
         </div>
 
-    </form>
+    </div>
+
+
 
 </div>

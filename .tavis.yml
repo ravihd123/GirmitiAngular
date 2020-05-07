@@ -1,0 +1,9 @@
+language: nopde_js
+nopde_js: 
+  - "12.16.2"
+script: 
+  - npm start
+install: 
+  - npm install -g firebase-
+after_success:
+  - firebase deploy --token #FIREBASE_TOKEN
