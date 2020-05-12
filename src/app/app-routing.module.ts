@@ -4,8 +4,15 @@ import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  { path: "login", component: LoginComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {
+    path: "login",
+    component: LoginComponent
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
   {
     path: 'dashboard',
     loadChildren: () => import('./main/dashboard/dashboard.module').then(m => m.DashboardModule)
